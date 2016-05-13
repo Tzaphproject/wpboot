@@ -1,0 +1,57 @@
+{
+  "name": "wpboot",
+  "version": "1.0.0",
+  "description": "wpboot",
+  "private": true,
+  "main": "target/bundle.js",
+  "scripts": {
+    "clean": "rm -r target/",
+    "build": "webpack --display-chunks --display-reasons --progress --color -p",
+    "start": "webpack-dev-server --content-base target/",
+    "commit": "git-cz",
+    "test": "mocha --recursive --compilers coffee:coffee-script/register -w",
+    "test:single": "mocha --recursive --compilers coffee:coffee-script/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wpboot"
+  },
+  "keywords": [
+    "wpboot"
+  ],
+  "author": "Tzaphkiel <Leroy.milamber@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "cjsx-loader": "^2.1.0",
+    "coffee-loader": "0.7.2",
+    "coffee-script": "1.10.0",
+    "commitizen": "2.6.1",
+    "css-loader": "^0.23.1",
+    "cz-conventional-changelog": "1.1.5",
+    "enzyme": "2.1.0",
+    "file-loader": "^0.8.5",
+    "ghooks": "1.0.3",
+    "html-webpack-plugin": "2.15.0",
+    "jsdom": "8.1.0",
+    "json-loader": "0.5.4",
+    "jsx-loader": "^0.13.2",
+    "mocha": "2.4.5",
+    "mocha-jsdom": "1.1.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "0.12.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "//": "pre-commit : npm run test:single"
+    }
+  },
+  "dependencies": {
+  }
+}
